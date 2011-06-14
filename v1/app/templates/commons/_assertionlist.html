@@ -1,0 +1,10 @@
+  <table class="assertionlist">
+    <tbody>
+      {% for assertion in assertion_list %}
+      <tr class="{% cycle 'assertion' 'assertion_shaded' %}">
+	{% include "commons/_assertion_tr.html" %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% include "commons/_paginator_nav.html" %}

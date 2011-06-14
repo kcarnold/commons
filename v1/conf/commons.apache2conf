@@ -1,0 +1,36 @@
+#NameVirtualHost *:80
+<VirtualHost *:80>
+	WSGIDaemonProcess site-1 user=kcarnold group=mlusers threads=15 processes=2 display-name=commons-wsgi-daemon
+	WSGIProcessGroup site-1
+
+	ServerAdmin kcarnold@media.mit.edu
+
+	Alias /media/ /srv/commons/public/media/
+	# Redirect all root-level files to the public dir
+	#AliasMatch ^/[^/]+\.[^/]+ /srv/commons/public$1
+	Alias /favicon.ico /srv/commons/public/favicon.ico
+	Alias /robots.txt /srv/commons/public/favicon.ico
+	
+	WSGIScriptAlias / /srv/commons/django.wsgi
+
+	DocumentRoot /srv/commons/public
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /srv/commons/public>
+		#Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog /srv/commons/logs/error.log
+	CustomLog /srv/commons/logs/access.log combined
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	ServerSignature On
+</VirtualHost>

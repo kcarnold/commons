@@ -1,0 +1,90 @@
+{% extends "exp/base.html" %}
+{% block title %}Experiments - main{% endblock title %}
+
+{% block extra_header %}
+<style type="text/css">
+#manip {
+  float: right;
+  border: 1px solid black;
+}
+
+</style>
+
+<script type="text/javascript">
+function $(id) { return document.getElementById(id); }
+
+var YuDS = YAHOO.util.DataSource;
+var ds = new YuDS('http://commons.hackorp.com/experiments/sentences/matching/');
+ds.responseType = YuDS.TYPE_JSON;
+ds.responseSchema = {
+  resultsList: 'sentences',
+  fields: ['id', 'text']
+};
+
+function fetch_sentences() {
+  var regex = $('regex').value;
+  var columns = [
+    {key: 'id'},
+    {key: 'text'}
+  ];
+  var dataTable = new YAHOO.widget.DataTable('sentences', columns, ds, {'initialRequest': escape(regex)+'/'});
+  dataTable.subscribe('rowClickEvent', dataTable.onEventSelectRow);
+  dataTable.subscribe('rowClickEvent', row_clicked);
+}
+
+function row_clicked(event) {
+  var rows = this.getSelectedRows();
+  if (rows.length == 0) return;
+  var row = rows[0];
+  var rec = this.getRecord(row);
+  var id=rec.getData('id');
+  var sentence = rec.getData('text');
+  $('sentence').innerHTML = sentence;
+}
+
+
+
+</script>
+{% endblock %}
+
+
+{% block content %}
+<div id="manip">
+  <strong>Sentence</strong>: <span id="sentence">(select something)</span>
+  <div id="maniptable">
+    <table>
+	  <thead>
+		<tr>
+		  <th>Variable</th>
+		  <th>Conditions</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>Input</td>
+		  <td>Match frame "X sit on Y"</td>
+		</tr>
+		<tr>
+		  <td>X</td>
+		  <td>is a <em>noun</em></td>
+		</tr>
+		<tr>
+		  <td>Y</td>
+		  <td>is a <em>noun</em></td>
+		</tr>
+	  </tbody>
+    </table>
+  </div>
+</div>
+
+
+<p>
+<form action="javascript:fetch_sentences()"
+Regex: <input type="text" id="regex"> <input type="submit">
+</form>
+</p>
+
+<div id="sentences" class="yui-skin-sam">
+</div>
+
+{% endblock %}

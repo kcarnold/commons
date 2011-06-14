@@ -1,0 +1,22 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Viewing one assertion" %}{% endblock title %}
+{% block content %}
+
+  <p><span style="font-weight: bold; font-size: 120%">{% linked_assertion assertion %}</span> {% rating_commands assertion %}</p>
+  <p>{% trans "by" %}&nbsp;{% userlink assertion.creator %}</p>
+  <p>{% trans "Type:" %} {{assertion.predtype}}</p>
+  <p>{% trans "Score:" %} {{assertion.score}}</p>
+  <table summary="user ratings">
+	<tr>
+	  <th>{% trans "User" %}</th><th>{% trans "Rating for this assertion" %}</th>
+	</tr>
+{% for rating in ratings %}
+<tr>
+  <td>{% userlink rating.user %}</td>
+  <td><b>{{rating.vote}}</b></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}

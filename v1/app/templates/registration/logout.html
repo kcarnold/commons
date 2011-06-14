@@ -1,0 +1,10 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Logged out" %}{% endblock %}
+
+{% block content %}
+{% blocktrans %}
+<h1>You've been logged out.</h1>
+<p>Thanks for stopping by; when you come back, don't forget to <a href="/accounts/login/">log in</a> again.</p>
+{% endblocktrans %}
+{% endblock %}

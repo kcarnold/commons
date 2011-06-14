@@ -1,0 +1,43 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+
+{% block title %}
+{% if predtype %}
+{% blocktrans %}Frames for language {{lang}} of type {{predtype}}{% endblocktrans %}
+{% else %}
+{% blocktrans %}Frames for language {{lang}}{% endblocktrans %}
+{% endif %}
+{% endblock title %}
+
+{% block content %}
+<form action="{% url add-frame lang=lang %}" method="POST">
+<table>
+<thead>
+<tr><th>{% trans "Assertion Type" %}</th><th>{% trans "Frame Text" %}</th><th>{% trans "Goodness" %}</th></tr>
+</thead>
+<tbody>
+{% for frame in frames %}
+<tr>
+<td class="predtype">{{frame.predtype}}</td>
+<td><a href="{% url add-from-frame lang=lang,frame=frame.id %}">{{frame.text}}</a></td>
+<td>{{frame.goodness}}</td>
+<td>&nbsp;</td>
+</tr>
+{% endfor %}
+<tr>
+<td><!--<input type="text" name="predtype" size="15">-->
+<select name="predtype">
+{% for predtype in predtypes %}
+<option value="{{predtype.id}}">{{predtype.name}} ({{predtype.id}})</option>
+{% endfor %}
+</select>
+</td>
+<td><input type="text" name="text" size="40"></td>
+<td><input type="text" name="goodness" size="3"></td>
+<td><input type="submit" value="Add Frame"></td>
+</tr>
+</tbody>
+</table>
+</form>
+
+{% endblock content %}

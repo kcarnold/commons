@@ -1,0 +1,14 @@
+{% spaceless %}
+{% load i18n %}
+{% load humanize %}
+{% if page_obj.has_previous %}
+{% ifnotequal page_obj.previous_page_number 1 %}<a href="{{path}}?{{ pageprefix }}page=1{{ otherpage }}">{% trans "First" %}</a> | {% endifnotequal %}
+<a href="{{path}}?{{ pageprefix }}page={{page_obj.previous_page_number}}{{ otherpage }}">{% trans "Prev" %}</a> |
+{% endif %}
+{% blocktrans with page_obj.number as cur_page and paginator.num_pages as num_pages %}Page {{cur_page}} of {{num_pages}}{% endblocktrans %}
+{% if page_obj.has_next %}
+| <a href="{{path}}?{{ pageprefix }}page={{page_obj.next_page_number}}{{ otherpage }}">{% trans "Next" %}</a>
+{% ifnotequal page_obj.next_page_number paginator.num_pages %} | <a href="{{path}}?{{ pageprefix }}page={{page_obj.paginator.num_pages}}{{ otherpage }}">{% trans "Last" %}</a> {% endifnotequal %}
+{% endif %}
+{% blocktrans with paginator.count|intcomma as page_count %}({{ page_count }} total){% endblocktrans %}
+{% endspaceless %}

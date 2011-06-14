@@ -1,0 +1,59 @@
+Ojay -- a developer-friendly wrapper for the Yahoo! User Interface library
+Copyright (c) 2007-08 the OTHER media Limited, written by James Coglan.
+
+Version: 0.1.2, released 22 February 2008
+
+http://ojay.othermedia.org
+
+This software is Open Source Initiative approved Open Source Software.
+Open Source Initiative Approved is a trademark of the Open Source Initiative.
+
+
+INTRODUCTION
+============
+
+Ojay is a JavaScript programming interface that wraps the Yahoo! User Interface library. It
+aims to make code easier to read and write, by allowing more sentence-like OO syntax and
+minimizing repetition.
+
+The download contains three build directories: min, pack and gzip. All contain the same
+files: they contain the source files and compressed copies of said files (whose names end
+with '-min'). Each uses a different compression strategy:
+
+  * min - comments and whitespace are removed, local variables are renamed, and 'private'
+    variables are obfuscated.
+
+  * gzip - files are minified as in 'min', then gzipped. These are the most efficient
+    files for use in production sites.
+
+  * pack - files are minified as in 'min', and then encoded using the algorithm from
+    Dean Edwards' Packer: http://dean.edwards.name/packer/ . Use these files if you
+    cannot serve gzipped content for some reason.
+
+Ojay's build files are generated using PackR, a Ruby version of Packer.
+
+Further information and docs are available on the Ojay site: http://ojay.othermedia.org
+
+
+DEVELOPMENT
+===========
+
+If you're checking this code out from the repository, you'll need to build the library from
+the source files (contained in the /source directory). To do this, you'll need Ruby installed.
+You can get Ruby for any platform from their web site:
+
+http://www.ruby-lang.org/en/downloads/
+
+You'll also need the PackR gem to compress code during the build process, and the staticmatic
+gem to view the doc site and run tests.
+
+gem install packr
+gem install staticmatic
+
+Once you've got Ruby installed, open a command prompt in the root directory (one level up
+from /source) and type 'rake'. That command will combine and compress the source files and
+place them in the /build directory. To start a server for the docs/test site, type
+
+staticmatic preview site
+
+The site is then available at http://localhost:3030, and the test suite at http://localhost:3030/test/

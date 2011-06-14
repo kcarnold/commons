@@ -1,0 +1,25 @@
+{% extends "commons/base.html" %}
+{% load commons_tags %}
+{% load i18n %}
+{% block title %}{% trans "Concept:" %} {{ concept_name }}{% endblock %}
+
+{% block content %}
+<div>
+  <div id="similar"></div>{# This gets filled in by AJAX. #}
+  <div class="viewheading">
+    <div class="lefthead">{% trans "Current knowledge" %}</div>
+  </div>
+  {% include "commons/_assertionlist.html" %}
+  <div id="questions"></div>{# also AJAX. #}
+  <div id="partial_questions"></div>{# also AJAX. #}
+  {# this is all from media/js/openmind.js, by the way. #}
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript">
+var concept='{{ concept_name }}';
+load_similarities(concept);
+{% if user.is_authenticated %}load_questions(concept);{% endif %}
+</script>
+{% endblock scripts %}

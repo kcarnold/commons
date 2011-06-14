@@ -1,0 +1,10 @@
+  <table class="ratinglist">
+    <tbody>
+      {% for rating in rating_list %}
+      <tr class="{% cycle 'rating' 'rating_shaded' %}">
+	{% include "commons/_rating_tr.html" %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% include "commons/_paginator_nav.html" %}

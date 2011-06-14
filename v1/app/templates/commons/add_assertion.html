@@ -1,0 +1,10 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}{% trans "Add an assertion" %}{% endblock title %}
+{% block content %}
+<form action="{% url add-from-frame lang=lang,frame=frame.id %}" method="post">
+{% with_blanks frame.text %}
+<input type="submit" value="{% trans "Teach OpenMind" %}" />
+</form>
+{% endblock content %}

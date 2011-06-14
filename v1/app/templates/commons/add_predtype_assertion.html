@@ -1,0 +1,25 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% comment %} Uses: predtype, examples (list of Assertions), frames {% endcomment %}
+{% block title %}{% trans "Add new knowledge" %}: {{predtype.name}}{% endblock title %}
+{% block content %}
+
+<h2>{% trans "Example statements" %}</h2>
+<ul>
+{% for example in examples %}
+{% with example as assertion %}{% include "commons/_assertion_li.html" %}{% endwith %}
+{% endfor %}
+</ul>
+
+<h2>{% trans "Teach OpenMind another statement of this type." %}</h2>
+<p style="font-weight: bold">{{predtype.name}}: {% trans predtype.description %}</p>
+
+{% for frame in frames%}
+<form action="{% url add-from-frame lang=lang,frame=frame.id %}" method="post">
+{% with_blanks frame.text %}
+<input type="submit" value="{% trans "Teach OpenMind" %}" />
+</form>
+{% endfor %}
+
+{% endblock content %}

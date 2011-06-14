@@ -1,0 +1,23 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% load humanize %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block content %}
+
+<h3>Concepts</h3>
+<ul>
+<li><strong>Total</strong>: {{ ccount.total|intcomma }}</li>
+<li>Good: {{ ccount.good|intcomma }}</li>
+<li>Singletons: {{ ccount.single|intcomma }}</li>
+</ul>
+
+<h3>Assertions</h3>
+<ul>
+<li><strong>Total</strong>: {{ acount.total|intcomma }}</li>
+<li>Useful (score > 0): {{ acount.gt0|intcomma }}</li>
+</ul>
+
+
+{% endblock %}

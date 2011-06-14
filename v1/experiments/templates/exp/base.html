@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{LANGUAGE_CODE}}" lang="{{LANGUAGE_CODE}}">
+<head>
+  <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.4.1/build/datatable/assets/skins/sam/datatable.css">
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/yahoo/yahoo-min.js" ></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/event/event-min.js" ></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/connection/connection-min.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/element/element-beta-min.js"></script>
+	
+    <script src="http://yui.yahooapis.com/2.4.1/build/selector/selector-beta-min.js"></script>
+    <script src="http://yui.yahooapis.com/2.4.1/build/json/json-beta-min.js"></script>
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/datasource/datasource-beta-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/datatable/datatable-beta-min.js"></script>
+
+    <script src="/media/js/experiments.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+{% block extra_header %}{% endblock %}
+</head>
+<body>
+  <div class='content'>
+	{% block content %}{% endblock %}
+  </div>
+</body>
+</html>

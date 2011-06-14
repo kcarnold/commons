@@ -1,0 +1,17 @@
+{% extends "commons/base.html" %}
+{% load commons_tags %}
+{% load i18n %}
+{% block title %}{% trans "Concepts" %}{% endblock %}
+
+{% block content %}
+{% regroup concept_list by num_predicates as concepts_byinfo %}
+{% for num_info in concepts_byinfo %}
+<h2>{{ num_info.grouper }}</h2>
+{% spaceless %}
+{% for concept in num_info.list %}
+<a href="../concept/{{concept.canonical_name|iriencode}}/">{{concept.canonical_name}}</a>{% if not forloop.last %}, {% endif %}
+{% endfor %}
+{% endspaceless %}
+{% endfor %}
+<p>{% include "commons/_paginator_nav.html" %}</p>
+{% endblock content %}

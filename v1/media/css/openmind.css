@@ -1,0 +1,445 @@
+/* used for the DHTML login popup */
+.hidden { display: none; }
+.visible { display: inherit; }
+#login {
+  position: absolute;
+  top: 3em;
+  left: 0;
+  border: 1px solid black;
+  background: white;
+  padding: .5em 1em;
+}
+
+/* Rating buttons */
+span.rate {
+    white-space: nowrap;
+}
+
+span.rate img {
+	background-image: url('/media/images/rating_buttons_sprite.gif');
+	width: 16px; height: 16px;
+}
+.rate_up_act { background-position: -8px -8px; }
+.rate_down_act { background-position: -8px -40px; }
+.rate_fix_act { background-position: -8px -72px; }
+.rate_up_inact { background-position: -8px -104px; }
+.rate_down_inact { background-position: -8px -136px; }
+.rate_fix_inact { background-position: -8px -168px; }
+
+
+#feedback_wrapper {
+  margin-top: .5em;
+  background: #fff;
+}
+
+#debugQueryTable {
+	font-size: 50%;
+    text-align: left;
+    width: 100%;
+}
+
+.loginform { text-align: right; }
+
+label {
+    width: 10em;
+    text-align: right;
+    margin-right: 1em;
+}
+
+.userlink, .userlink:hover, .userlink:visited, .userlink:active {
+  padding-left: 24px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: url(/media/images/OpenMind_user.png) center left no-repeat;
+}
+
+.sidebar .small_assertion {
+    background: #f5f5f5;
+    color: #414141;
+    padding: .5em 2em .5em .5em;
+    margin: 0 0 .1em 0;
+}
+
+.thinking {
+    margin-left: 1em;
+    margin-top: 1ex;
+}
+
+.assertion_shaded, .similarity_shaded {
+    background-color: #eee;
+}
+
+.similar a {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.assertion {
+    background-color: #fff;
+}
+
+.assertion_disabled td {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.inference {
+    margin-bottom: 1ex;
+    padding: 1ex;
+    background-color: #ffe;
+    border: 1px solid #fdb;
+    list-style: none;
+}
+
+.partial_inferences {
+    padding: 1ex;
+    margin-left: 2em;
+    background-color: #eef;
+    border: 1px solid #ced;
+    width: 100%;
+    list-style: none;
+}
+
+.partial_inference {
+    margin-bottom: 1ex;
+}
+
+.partial_submit {
+    padding-bottom: 1ex;
+}
+
+.predlink {
+    text-decoration: none;
+}
+
+.current_page {
+    font-weight: bold;
+}
+
+td.assertion_text {
+    /* width: 20em; */
+    padding: 0.5ex;
+}
+
+td.creator {
+    text-align: right;
+    padding-right: 1em;
+}
+
+td.score {
+    text-align: right;
+    padding-right: 1em;
+    width: 5em;
+}
+
+.errorlist,.error {
+    color: red;
+}
+
+/* below this comes from oswd-internet
+   -------------- */
+/* project: internet services template
+   author: luka cvrk (www.solucija.com) */
+   
+body { 
+	padding: 0; 
+	margin: 0; 
+	font: 10pt Tahoma, sans-serif; 
+	line-height: 1.5em;
+	background: #fff; 
+	color: #454545; 
+}
+
+/*body.devel {
+    background: #8f3;
+}
+
+body.devel .left,.right,.footer {
+    background: #fff;
+}*/
+
+a {	color: #56a; background: inherit;}
+a.singleton { color: #932; }
+a:hover { color: #6C757A; background: inherit; }
+
+.header h1 { font: normal 2.1em Arial, Sans-Serif; letter-spacing: -1px; padding: 0 0 0 0.5em; margin: 0; }
+.dark  { color: #737373; background: inherit; font-weight: bold; }
+h1 a, h2 a { text-decoration: none; }
+h1 { font-weight: normal; }
+h1 a:hover, h2 a:hover { color: #FF6600; background: inherit; }
+.header h2 { margin: 0; padding: 0 0 0 1.5em; font: bold 1.7em Arial, Sans-Serif;}
+.header h2 { font-size: 1.5em; margin-bottom: 5px; color: #000; background: inherit; }
+
+p {	margin: 0 0 5px 0; }
+
+ul { margin: 0; padding : 0; list-style : none; }
+
+form { 	margin: 0; }
+
+input.search { 
+	width: 10em; 
+	border: 0;
+	background: #FFF url(/media/images/input.gif) no-repeat;
+	padding: 4px; 
+	color: #5566AA;
+	font-weight: bold;
+}
+
+input.submit {
+	background: #5566AA url(/media/images/submit.gif) no-repeat;
+	border: 0;
+	padding: 4px 0;
+	margin: 0 15px 1px 0;
+	color: #FFF;
+	font: bold 1em Arial, Sans-Serif;
+}
+
+input.login { 
+	width: 10em;
+	border: none; 
+	
+	padding: 4px; 
+}
+
+/* layout
+   ------ */
+
+.content { 
+	margin: 0 auto;
+	/* width: 95%; */
+	padding: 10px; 
+}
+
+.header { 
+	height: 5em;
+	background: #eee;
+	color: #808080;
+	margin: 3px 0;
+	padding: 10px 0 0 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.top_info {
+	/* float: right;
+	width: 555px;
+	padding: 5px 0 4px 0; */
+	border-bottom: 1px solid #eee;
+	background: #eee;
+	color: #808080;
+}
+
+	.top_info_left {
+		/* width: 200px; */
+		float: left;
+	}
+
+	.top_info_right {
+		float: right;
+		position: relative; /* for the login box absolute positioning. */
+		width: 20em;
+		padding: 0.5em 0 0 1em;
+		border-left: 1px solid #ddd;
+	}
+
+.browse_category  {
+	font-size: 0.9em;
+	width: 190px;
+	color: #FFF;
+	background: inherit;
+}
+
+.bar { 
+	clear: both;
+	font-size: 1.1em;
+	height: 2.2em; 
+	color: #FFF;
+	margin: 0 0 1em 0; 
+	background: #abc;
+}
+
+	.bar li { 
+		margin: 0; 
+		padding: .4em 1em .4em 1em;
+		color: #FFEADC;
+		background: #abc;
+		float: left; 
+	}
+	
+	.bar li.active { 
+		/* background: #5566AA url(/media/images/bar.gif) no-repeat center top; */
+		color: #fff;
+		font-weight: bold; 
+		padding: .4em 1em .4em 1em;
+	}
+	
+	.bar li a { 
+		font-weight: bold;
+		color: #FFF; 
+		background: inherit;
+		text-decoration: none;
+	} 
+	
+	.bar li a:hover { 
+		color: #DDE; 
+		background: inherit;
+	} 
+
+.search_field { 
+	/* background: #fff url(searchbg.gif) no-repeat right; */
+	color: #808080;
+	float: right;
+    padding: .4em .4em .4em .4em;
+}
+
+.grey {
+	color: #808080;
+	background: inherit;
+	font-weight: normal;
+}
+
+.search_form { float: right; }
+
+.subheader {
+	margin: 0px 0 10px 0;
+	border-bottom: 1px solid #eee;
+	padding: 5px 0 5px 0;
+	background: #A4A4A4;
+	color: #fff;
+}
+
+/* left side
+   --------- */
+
+.left {
+	/* float: left; */
+	/* width: 65%; */
+	margin: 0 0 10px 0;
+}
+
+.left h3 {
+	/* clear: both; */
+	background: #A9C0CE url(/media/images/corner.gif) no-repeat top right;
+	color: #FFF;
+	padding: 7px 0 7px 5px;
+	font: bold 1em Tahoma, Arial, Sans-Serif;
+	margin: 0 0 1ex 0;
+    /* width: 60%; */
+}
+	.left_side {
+		float: left;
+		width: 180px;
+		padding: 0 0 0 10px;
+		margin: 10px 0;
+	}
+		
+	.left_side a, .right_side a { color: #414141; background: #FFF; }
+		
+	.right_side {
+		float: right;
+		/* width: 220px; */
+		background: #FFF url(/media/images/dotted.gif) repeat-y;
+		color: #414141;
+		padding: 0 0 0 40px;
+		margin: 10px 0;
+	}
+		
+	.left_box { margin: 0 0 10px 0; color: #000; background: #FFF; padding: 3px 0; }
+	
+		
+/* right side
+   ---------- */
+		
+.right {
+    float: right;
+    clear: right;
+	width: 25%;
+	margin: 0 0 0 1em;
+    padding-left: 1em;
+    background: #ddd;
+}
+
+.right h3 {
+	background: #6C757A  url(/media/images/corner.gif) no-repeat top right;;
+	color: #FFF;
+	padding: .5em;
+	font: bold 1em Tahoma, Arial, Sans-Serif;
+	margin: 0 0 -.5em -1em;
+}
+
+.right h4 { 
+    background: #fff;
+    margin: .5em 0 3px -.5em;
+    padding-left: .5em;
+}
+
+.viewheading {
+	background: #8C95AA  url(/media/images/corner.gif) no-repeat top right;;
+	color: #FFF;
+	padding: .2em;
+	margin: 2ex 0 1ex 0;
+    width: 70%;
+}
+
+.lefthead {
+	font: 1.3em Tahoma, Arial, Sans-Serif;
+    width: 50%;
+}
+
+.righthead {
+    width: 50%;
+    text-align: right;
+    font-size: 1em;
+}
+
+.righthead a {
+    color: #FFF;
+}
+
+.assertionlist {
+    width: 70%;
+}
+
+.image {
+	float: left;
+	margin: 0 9px 3px 0;
+}
+
+/* footer
+   ------ */
+
+.footer { 
+	clear: both;
+	text-align: center;
+	padding: 10px 0 10px 0;
+	margin: 0;
+	border-top: 1px solid #ccc;
+	line-height: 1.8em;
+}
+
+.footer a { color: #808080; background: #fff; }
+
+.cloud {
+    border: 1px solid #bbe;
+    width: 60%;
+}
+
+.cloud h2 {
+    padding: 1em;
+}
+.cloud p {
+    padding: 1em;
+}
+
+.cloud a {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.also_called blockquote {
+    line-height: 2ex;
+    font-size: 90%;
+    margin-top: 0.5ex;
+}
+img {
+	border: 0px;
+}

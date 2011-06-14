@@ -1,0 +1,40 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Add new knowledge" %}{% endblock title %}
+{% block content %}
+
+
+<dl>
+{% for predtype in predtypes %}
+<dt><a href="{% url add-predtype lang=lang,predtype=predtype.id %}">{{predtype.name}}</a></dt>
+<dd>{% trans predtype.description %}</dd>
+{% endfor %}
+</dl>
+
+{% endblock content %}
+
+{% comment %}
+The descriptions need to be translated. However, they are stored in the database.
+Here is a local copy of them so that message extraction will pick them up.
+If the database changes, this list will need updating.
+
+{% trans "What is it made of?" %}
+{% trans "What kind of thing is it?" %}
+{% trans "What do you use it for?" %}
+{% trans "What can it do?" %}
+{% trans "What is it part of?" %}
+{% trans "How do you define it?" %}
+{% trans "How do you bring it into existence?" %}
+{% trans "What do you do first to accomplish it?" %}
+{% trans "What do you do last to accomplish it?" %}
+{% trans "What do you need to do first?" %}
+{% trans "Where would you find it?" %}
+{% trans "Why would you do it?" %}
+{% trans "What does it want?" %}
+{% trans "What does it make you want to do?" %}
+{% trans "What does it make happen?" %}
+{% trans "What do you do to accomplish it?" %}
+{% trans "What properties does it have?" %}
+{% trans "What can you do to it?" %}
+
+{% endcomment %}

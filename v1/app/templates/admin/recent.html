@@ -1,0 +1,32 @@
+{% extends "commons/base.html" %}
+{% load commons_tags %}
+{% block title %}Recent Activity{% endblock %}
+
+{% block content %}
+<div>
+  <div class="viewheading">
+    <div class="lefthead">Assertions</div>
+  </div>
+  <table class="assertionlist">
+    <tbody>
+      {% for assertion in assertions %}
+      <tr class="{% cycle 'assertion' 'assertion_shaded' %}" id="pred_{{assertion.id}}">
+	{% include "commons/_assertion_tr.html" %}
+	<td><a href="#" onclick="mark_spam({{assertion.id}}); return false;">Spam</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+<h2>Ratings</h2>
+<table summary="user ratings">
+{% for rating in ratings %}
+<tr>
+  <td>{% linked_assertion rating.statement %}</td>
+  <td>{% userlink rating.user %}</td>
+  <td><b>{{rating.rating_value.label}}</b></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+{% endblock content %}
+

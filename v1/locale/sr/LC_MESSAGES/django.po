@@ -1,0 +1,852 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-12-11 17:21-0600\n"
+"PO-Revision-Date: 2007-12-12 09:55-0500\n"
+"Last-Translator: Viktor Simjanoski <viktor@mit.edu>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.0.2\n"
+
+# ovisi dal trazis pridjev ili naziv jezika
+#: settings.py:130
+msgid "Arabic"
+msgstr "arapski/arapski jezik"
+
+#: settings.py:131 lib/rosetta/templates/rosetta/pofile.html:19
+#: lib/rosetta/templates/rosetta/pofile.html:44
+msgid "English"
+msgstr "engleski/engleski jezik"
+
+#: settings.py:132
+msgid "Spanish"
+msgstr "španjolski jezik"
+
+#: settings.py:133
+msgid "French"
+msgstr "francuski/francuski jezik"
+
+#: settings.py:134
+msgid "Croatian"
+msgstr "hrvatski/hrvatski jezik"
+
+#: settings.py:135
+msgid "Italian"
+msgstr ""
+
+#: settings.py:136
+msgid "Macedonian"
+msgstr "makedonski/makedonski jezik"
+
+#: settings.py:137
+msgid "Dutch"
+msgstr ""
+
+#: settings.py:138
+msgid "Portuguese"
+msgstr "portugalski/portugalski jezik"
+
+#: settings.py:139
+msgid "Russian"
+msgstr ""
+
+#: settings.py:140
+msgid "Serbian"
+msgstr "srpski/srpski jezik"
+
+#: settings.py:141
+msgid "Turkish"
+msgstr "turski/turski jezik"
+
+#: util.py:123
+#, python-format
+msgid "Required parameter missing: %s"
+msgstr ""
+
+#: util.py:146
+msgid "Internal error"
+msgstr ""
+
+#: app/json.py:30
+msgid "Login failed"
+msgstr ""
+
+#: app/json.py:41
+msgid "Frame not found."
+msgstr ""
+
+#: app/json.py:47
+msgid "One of the slots was not filled in."
+msgstr ""
+
+#: app/json.py:57
+msgid "Knowledge accepted."
+msgstr ""
+
+#: app/json.py:64
+msgid "Could not interpret rating value."
+msgstr ""
+
+#: app/json.py:87
+msgid "Statement rated."
+msgstr ""
+
+#: app/json.py:139
+#, python-format
+msgid "Nothing known about the concept \"%s\"."
+msgstr ""
+
+#: app/templates/base.html:29
+msgid "Open Mind Common Sense"
+msgstr ""
+
+# Ok. Ova recenica mi je opcenito cudna. Ovo ti je doslovan prijevod. Nadam se da ce pomoc
+#: app/templates/base.html:30
+msgid "Explain your world."
+msgstr "Objasni svoj svijet."
+
+#: app/templates/base.html:36 app/templates/commons/index.html:3
+#: lib/rosetta/templates/rosetta/languages.html:3
+#: lib/rosetta/templates/rosetta/pofile.html:13
+msgid "Home"
+msgstr "dom, kuća"
+
+#: app/templates/base.html:38
+#: app/templates/commons/add_predtype_assertion.html:5
+#: app/templates/commons/add_predtypes.html:3
+msgid "Add new knowledge"
+msgstr "Saznati novo. Nauciti novo. Dobiti nova saznanja/znanja."
+
+#: app/templates/base.html:40
+msgid "Highest rated"
+msgstr "Najbolje rangiran. Najvise posjecena (npr. stranica)"
+
+#: app/templates/base.html:42 app/templates/commons/user_contributions.html:7
+msgid "My contributions"
+msgstr "Moj doprinos/danak..."
+
+#: app/templates/base.html:44
+#, fuzzy
+msgid "Explore concepts"
+msgstr "koncepti iztrazivanja"
+
+#: app/templates/base.html:45
+msgid "Play 20 questions"
+msgstr ""
+
+#: app/templates/base.html:50 lib/rosetta/templates/rosetta/pofile.html:33
+msgid "Search"
+msgstr "Trazi."
+
+#: app/templates/base.html:64
+msgid ""
+"by the <a href=\"http://agents.media.mit.edu/\">Software Agents group</a> at "
+"the <a href=\"http://media.mit.edu/\">MIT Media Lab</a>"
+msgstr ""
+
+#: app/templates/base.html:64
+msgid "Site Blog"
+msgstr ""
+
+# Ima dosta prijevoda. Mozes ko i na makedonskom mislim, uduhu jezika
+#: app/templates/commons/_assertion_tr.html:6
+#: app/templates/commons/assertion_detail.html:8
+msgid "by"
+msgstr "oko, od, kod, o, do"
+
+#: app/templates/commons/_assertion_tr.html:7
+#: app/templates/commons/assertion_detail.html:10
+msgid "Score:"
+msgstr "Rezultat:"
+
+#: app/templates/commons/_login.html:4
+#, python-format
+msgid "Logged in as %(username)s."
+msgstr "Logiran pod imenom %(username)s"
+
+#: app/templates/commons/_login.html:5
+msgid "Sign out"
+msgstr "Logaut"
+
+#: app/templates/commons/_login.html:9
+msgid "You are not logged in."
+msgstr "Nisi logiran"
+
+#: app/templates/commons/_login.html:13
+msgid "Sign up"
+msgstr "Registruj se"
+
+#: app/templates/commons/_login.html:17
+#: app/templates/registration/login.html:16
+#: app/templates/registration/registration_form.html:21
+msgid "Username:"
+msgstr "korisnicko ime:"
+
+#: app/templates/commons/_login.html:18
+#: app/templates/registration/login.html:17
+#: app/templates/registration/registration_form.html:41
+msgid "Password:"
+msgstr "lozinka"
+
+#: app/templates/commons/_login.html:19
+#: app/templates/registration/login.html:20
+msgid "Log in"
+msgstr "Pristupi"
+
+#: app/templates/commons/_paginator_nav.html:5
+msgid "First"
+msgstr "prvi"
+
+# ovo ne razumijem. Jel to mozda previous?
+#: app/templates/commons/_paginator_nav.html:6
+msgid "Prev"
+msgstr "prethodan"
+
+#: app/templates/commons/_paginator_nav.html:8
+#, python-format
+msgid "Page %(cur_page)s of %(num_pages)s"
+msgstr ""
+
+#: app/templates/commons/_paginator_nav.html:10
+msgid "Next"
+msgstr "sljedeci"
+
+#: app/templates/commons/_paginator_nav.html:11
+msgid "Last"
+msgstr "zadnji"
+
+#: app/templates/commons/_paginator_nav.html:13
+#, python-format
+msgid "(%(page_count)s total)"
+msgstr ""
+
+#: app/templates/commons/_today.html:3
+msgid "OpenMind Today"
+msgstr ""
+
+#: app/templates/commons/_today.html:4 app/templates/commons/concepts.html:4
+#, fuzzy
+msgid "Concepts"
+msgstr "Koncept"
+
+#: app/templates/commons/_today.html:6
+msgid "Ratings"
+msgstr ""
+
+#: app/templates/commons/_today.html:10
+msgid "Feedback"
+msgstr ""
+
+#: app/templates/commons/_today.html:15
+msgid "Send it in!"
+msgstr ""
+
+# doslovno
+#: app/templates/commons/_today.html:21
+msgid "Recently learned"
+msgstr "Nedavno nauceno."
+
+#: app/templates/commons/add_assertion.html:4
+msgid "Add an assertion"
+msgstr ""
+
+#: app/templates/commons/add_assertion.html:8
+#: app/templates/commons/add_predtype_assertion.html:21
+msgid "Teach OpenMind"
+msgstr ""
+
+#: app/templates/commons/add_predtype_assertion.html:8
+#, fuzzy
+msgid "Example statements"
+msgstr "klasiraj/ocjeni ovu izjavu kao..."
+
+#: app/templates/commons/add_predtype_assertion.html:15
+msgid "Teach OpenMind another statement of this type."
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:21
+msgid "What is it made of?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:22
+msgid "What kind of thing is it?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:23
+msgid "What do you use it for?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:24
+msgid "What can it do?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:25
+msgid "What is it part of?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:26
+msgid "How do you define it?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:27
+msgid "How do you bring it into existence?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:28
+msgid "What do you do first to accomplish it?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:29
+msgid "What do you do last to accomplish it?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:30
+msgid "What do you need to do first?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:31
+msgid "Where would you find it?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:32
+msgid "Why would you do it?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:33
+msgid "What does it want?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:34
+msgid "What does it make you want to do?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:35
+msgid "What does it make happen?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:36
+msgid "What do you do to accomplish it?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:37
+msgid "What properties does it have?"
+msgstr ""
+
+#: app/templates/commons/add_predtypes.html:38
+msgid "What can you do to it?"
+msgstr ""
+
+#: app/templates/commons/adhoc_categories.html:5
+msgid "Ad-hoc categories"
+msgstr ""
+
+#: app/templates/commons/adhoc_categories.html:139
+msgid "Enter a few words in the box below, separated by commas."
+msgstr ""
+
+#: app/templates/commons/adhoc_categories.html:147
+msgid "Here are concepts and features that are similar to this category:"
+msgstr ""
+
+#: app/templates/commons/adhoc_categories.html:150
+#, fuzzy
+msgid "Similar concepts"
+msgstr "koncepti iztrazivanja"
+
+#: app/templates/commons/adhoc_categories.html:154
+#, fuzzy
+msgid "Similar features"
+msgstr "koncepti iztrazivanja"
+
+#: app/templates/commons/assertion_detail.html:4
+msgid "Viewing one assertion"
+msgstr ""
+
+#: app/templates/commons/assertion_detail.html:9
+msgid "Type:"
+msgstr "Tip/Vrsta:"
+
+#: app/templates/commons/assertion_detail.html:13
+#, fuzzy
+msgid "User"
+msgstr "korisnicko ime:"
+
+#: app/templates/commons/assertion_detail.html:13
+msgid "Rating for this assertion"
+msgstr ""
+
+#: app/templates/commons/assertion_list.html:3
+msgid "Assertions"
+msgstr ""
+
+#: app/templates/commons/concept.html:4
+#: app/templates/commons/concept_noinfo.html:5
+msgid "Concept:"
+msgstr "Koncept"
+
+#: app/templates/commons/concept.html:10
+msgid "Current knowledge"
+msgstr "Trenutno znanje/saznanje"
+
+#: app/templates/commons/concept_noinfo.html:10
+msgid "Nothing is currently known about"
+msgstr "Trenutno se nista ne zna o.."
+
+# e..za ovu ti stvarno nisam sigurna..al mislim da bi u duhu jezika to to znacilo
+#: app/templates/commons/concept_noinfo.html:12
+msgid "Why don't you add some knowledge?"
+msgstr "Zasto ne prosiris svoje znanje?"
+
+#: app/templates/commons/frames.html:6
+#, python-format
+msgid "Frames for language %(lang)s of type %(predtype)s"
+msgstr ""
+
+#: app/templates/commons/frames.html:8
+#, python-format
+msgid "Frames for language %(lang)s"
+msgstr ""
+
+#: app/templates/commons/frames.html:16
+msgid "Assertion Type"
+msgstr ""
+
+#: app/templates/commons/frames.html:16
+msgid "Frame Text"
+msgstr ""
+
+#: app/templates/commons/frames.html:16
+msgid "Goodness"
+msgstr ""
+
+#: app/templates/commons/index.html:13
+#, python-format
+msgid ""
+"\n"
+"<h1>Welcome to Open Mind Common Sense!</h1>\n"
+"\n"
+"<p>Computers don't currently know the basic things about the world that we "
+"consider \"common sense.\" Here, you can help build a database of such "
+"knowledge in simple English sentences. The computer will analyze these "
+"sentences to connect concepts and draw new conclusions from the things you "
+"teach it.</p>\n"
+"\n"
+"<h2>Getting started</h2>\n"
+"<p>To browse, type a word or two into the \"Search\" box, click a link on "
+"the sidebar, or <a href=\"%(best_url)s\">see the highest-rated statements</"
+"a>.</p>\n"
+"<p>If you want to interact with OpenMind and teach it new things, <b><a href="
+"\"%(login_url)s\">log in</a> to get started!</b></p>\n"
+"\n"
+"<h2>The big picture</h2>\n"
+"<p>\n"
+"This project, Open Mind Common Sense, enables computers to learn general "
+"knowledge from ordinary people over the Web. It is the product of ongoing "
+"research by the <a href=\"http://csc.media.mit.edu/\">Commonsense Computing "
+"Initiative</a> at the MIT Media Lab. You can find related projects that "
+"other groups are working on at <a href=\"http://openmind.org/\">OpenMind."
+"org</a>.\n"
+"</p>\n"
+"<p>\n"
+"The information collected by this site becomes part of <a href=\"http://"
+"conceptnet.media.mit.edu/\">ConceptNet</a>, an open-source, multilingual "
+"semantic network of general knowledge. The reasoning is powered by <a href="
+"\"http://divisi.media.mit.edu/\">Divisi</a>, a tool for reasoning by analogy "
+"over semantic networks.\n"
+"</p>\n"
+"<p>For more information and updates, visit our <a href=\"http://conceptnet."
+"blogspot.com/\">site blog</a>.</p>\n"
+"\n"
+"<h2>Languages</h2>\n"
+"<p>We currently have significant amounts of data in <a href=\"/en\">English</"
+"a> and <a href=\"/pt\">Portuguese</a>, and working on expanding to other "
+"languages.</p>\n"
+msgstr ""
+
+#: app/templates/commons/login.html:3
+msgid "Log in to Open Mind"
+msgstr ""
+
+#: app/templates/commons/user_contributions.html:9
+#, fuzzy
+msgid "Contributions from user:"
+msgstr "Moj doprinos/danak..."
+
+#: app/templates/commons/user_contributions.html:14
+msgid "New knowledge that you contributed"
+msgstr ""
+
+#: app/templates/commons/user_contributions.html:16
+msgid "New knowledge contributed by this user"
+msgstr ""
+
+#: app/templates/commons/user_contributions.html:35
+msgid "Existing knowledge that you rated"
+msgstr ""
+
+#: app/templates/commons/user_contributions.html:37
+msgid "Existing knowledge rated by this user"
+msgstr ""
+
+#: app/templates/registration/activate.html:3
+msgid "Welcome to OpenMind Commons!"
+msgstr ""
+
+#: app/templates/registration/activate.html:6
+msgid ""
+"\n"
+"<p>Thanks so much for volunteering to help us! Here are some ways you can "
+"get started:</p>\n"
+"<ul>\n"
+"  <li><p><b>Add new knowledge</b>: Tell us something entirely new! For "
+"example, you could fill in something in this frame:</p>\n"
+"\t<p>[FIXME] we'll put this here soon!</p></li>\n"
+"  <li><p><b>Review existing concepts</b>: Click on any concept you see to "
+"get to its page. Once there, you can rate existing knowledge about it, or "
+"answer questions that OpenMind asks you. For example, here are some concepts "
+"that could use your review:</p>\n"
+"\t<p>Again, [FIXME]... coming soon.</li>\n"
+"</ul>\n"
+"<p>If you have any trouble, please don't hesitate to contact us.</p>\n"
+msgstr ""
+
+#: app/templates/registration/activate.html:17
+#, python-format
+msgid ""
+"\n"
+"<p>Sorry, it didn't work. Either your activation link was incorrect, or\n"
+"the activation key for your account has expired; activation keys are\n"
+"only valid for %(expiration_days)s days after\n"
+"registration.</p>\n"
+msgstr ""
+
+#: app/templates/registration/activation_email.html:1
+#, python-format
+msgid ""
+"\n"
+"Someone, hopefully you, signed up for a new account at Open Mind Commons "
+"(http://commons.media.mit.edu/) using this email address. If it was you, and "
+"you'd like to activate and use your account, click the link below or copy "
+"and paste it into your web browser's address bar:\n"
+"\n"
+"http://commons.media.mit.edu/accounts/activate/%(activation_key)s/\n"
+"\n"
+"If you didn't request this, you don't need to do anything; you won't receive "
+"any more email from us, and the account will expire automatically in %"
+"(expiration_days)s days.\n"
+msgstr ""
+
+#: app/templates/registration/activation_email_subject.html:1
+msgid "Activate your Open Mind Commons account"
+msgstr ""
+
+#: app/templates/registration/login.html:4
+#, fuzzy
+msgid "Login"
+msgstr "Pristupi"
+
+#: app/templates/registration/login.html:9
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+
+#: app/templates/registration/login.html:12
+msgid ""
+"If you don't have an account, you can <a href=\"/accounts/register/\">sign "
+"up</a> for one."
+msgstr ""
+
+#: app/templates/registration/logout.html:3
+msgid "Logged out"
+msgstr ""
+
+#: app/templates/registration/logout.html:6
+msgid ""
+"\n"
+"<h1>You've been logged out.</h1>\n"
+"<p>Thanks for stopping by; when you come back, don't forget to <a href=\"/"
+"accounts/login/\">log in</a> again.</p>\n"
+msgstr ""
+
+#: app/templates/registration/registration_complete.html:3
+msgid "Registration complete"
+msgstr ""
+
+#: app/templates/registration/registration_complete.html:6
+msgid ""
+"\n"
+"<h1>Check your email</h1>\n"
+"<p>An activation link has been sent to the email address you supplied, along "
+"with instructions for activating your account.</p>\n"
+msgstr ""
+
+#: app/templates/registration/registration_form.html:3
+msgid "Sign Up"
+msgstr "Logiraj se"
+
+#: app/templates/registration/registration_form.html:5
+msgid ""
+"\n"
+"<p>Fill out the form (all fields are required) and your account will be "
+"created; you'll be sent an email with instructions on how to finish your "
+"registration.</p>\n"
+"\n"
+"<p>We'll only use your email to send you signup instructions. We hate spam\n"
+"as much as you do.</p>\n"
+msgstr ""
+
+#: app/templates/registration/registration_form.html:13
+msgid "Please correct the errors below:"
+msgstr ""
+
+#: app/templates/registration/registration_form.html:16
+msgid "Create an account"
+msgstr ""
+
+#: app/templates/registration/registration_form.html:31
+msgid "Email address:"
+msgstr ""
+
+#: app/templates/registration/registration_form.html:51
+msgid "Password (type again to catch typos):"
+msgstr ""
+
+#: app/templates/registration/registration_form.html:60
+msgid "Register"
+msgstr ""
+
+#: app/templates/registration/registration_form.html:64
+msgid ""
+"\n"
+"<p>All content on this site may be redistributed under the terms of either "
+"the <a href=\"http://creativecommons.org/licenses/GPL/2.0/\">GNU General "
+"Public License</a>, version 2 or later, or the <a rel=\"license\" href="
+"\"http://creativecommons.org/licenses/by/3.0/us/\">Creative Commons "
+"Attribution 3.0 License</a>. By contributing to this site, you agree to "
+"license your contributions under these licenses.</p>\n"
+msgstr ""
+
+#: lib/registration/forms.py:38
+#, fuzzy
+msgid "username"
+msgstr "korisnicko ime:"
+
+#: lib/registration/forms.py:41
+msgid "email address"
+msgstr ""
+
+#: lib/registration/forms.py:43
+#, fuzzy
+msgid "password"
+msgstr "lozinka"
+
+#: lib/registration/forms.py:45
+msgid "password (again)"
+msgstr ""
+
+#: lib/registration/forms.py:57
+msgid "This username is already taken. Please choose another."
+msgstr ""
+
+#: lib/registration/forms.py:69
+msgid "You must type the same password each time"
+msgstr ""
+
+#: lib/registration/forms.py:98
+msgid "I have read and agree to the Terms of Service"
+msgstr ""
+
+#: lib/registration/forms.py:107
+msgid "You must agree to the terms to register"
+msgstr ""
+
+#: lib/registration/forms.py:123
+msgid ""
+"This email address is already in use. Please supply a different email "
+"address."
+msgstr ""
+
+#: lib/registration/forms.py:149
+msgid ""
+"Registration using free email addresses is prohibited. Please supply a "
+"different email address."
+msgstr ""
+
+#: lib/registration/models.py:190
+#, fuzzy
+msgid "user"
+msgstr "korisnicko ime:"
+
+#: lib/registration/models.py:191
+msgid "activation key"
+msgstr ""
+
+#: lib/registration/models.py:196
+msgid "registration profile"
+msgstr ""
+
+#: lib/registration/models.py:197
+msgid "registration profiles"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:3
+#: lib/rosetta/templates/rosetta/languages.html:4
+msgid "Language selection"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:14
+msgid "File"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:15
+msgid "Messages"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:16
+msgid "Translated"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:17
+msgid "Obsolete"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:18
+msgid "Progress"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:37
+msgid "Nothing to translate!"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:38
+msgid ""
+"You haven't specified any languages in your settings file, or haven't yet "
+"generated a batch of translation catalogs."
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/languages.html:39
+#, python-format
+msgid ""
+"Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</"
+"a> for a guide on how to set up internationalization for your project."
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:7
+msgid "Pick another file"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:8
+msgid "Download this catalog"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:16
+msgid "Progress: %(percent_translated)s%"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:17
+msgid "File is read-only: download the file when done editing!"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:21
+#, python-format
+msgid "Translate into %(rosetta_i18n_lang_name)s"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:24
+msgid "Display:"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:25
+msgid "Untranslated only"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:26
+msgid "Translated only"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:27
+msgid "Both"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:35
+msgid "Go"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:46
+msgid "Occurrences(s)"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:67
+msgid "suggest"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:75
+#, python-format
+msgid "%(more_count)s more"
+msgid_plural "%(more_count)s more"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:87
+msgid "Save and translate next block"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:91
+msgid "Skip to page:"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:104
+msgid "Displaying:"
+msgstr ""
+
+#: lib/rosetta/templates/rosetta/pofile.html:106
+#, python-format
+msgid "%(hits)s/%(message_number)s message"
+msgid_plural "%(hits)s/%(message_number)s messages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: twenty_questions/templates/done.html:4
+msgid "Thank you!"
+msgstr ""
+
+#: twenty_questions/templates/frame.html:4
+msgid "Teach OpenMind a new concept"
+msgstr ""
+
+#: twenty_questions/templates/manyQuestions.html:4
+msgid "Teach OpenMind about a concept"
+msgstr ""
+
+#: twenty_questions/templates/mstart.html:4
+#: twenty_questions/templates/qstart.html:4
+#: twenty_questions/templates/start.html:4
+msgid "Welcome to the Open Mind User Test!"
+msgstr ""
+
+#: twenty_questions/templates/multiadd.html:4
+msgid "Thank you"
+msgstr ""
+
+#: twenty_questions/templates/nosurvey.html:4
+msgid "Done with the user test"
+msgstr ""
+
+#: twenty_questions/templates/question.html:4
+#: twenty_questions/templates/survey.html:4
+msgid "Open Mind: 20 Questions"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Confirm Password"
+#~ msgstr "lozinka"
+
+#~ msgid "rates this statement as"
+#~ msgstr "klasiraj/ocjeni ovu izjavu kao..."

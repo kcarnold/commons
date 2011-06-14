@@ -1,0 +1,16 @@
+# See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
+
+User-agent: *
+Disallow: /en/concept/
+Disallow: /en/assertion/
+Disallow: /en/relation/
+Disallow: /en/tensor.gz
+Disallow: /pt/concept/
+Disallow: /pt/assertion/
+Disallow: /pt/relation/
+Disallow: /pt/tensor.gz
+Disallow: /nl/concept/
+Disallow: /nl/assertion/
+Disallow: /nl/relation/
+Disallow: /nl/tensor.gz
+Disallow: /user/

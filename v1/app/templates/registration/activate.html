@@ -1,0 +1,24 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Welcome to OpenMind Commons!" %}{% endblock %}
+{% block content %}
+{% if account %}
+{% blocktrans %}
+<p>Thanks so much for volunteering to help us! Here are some ways you can get started:</p>
+<ul>
+  <li><p><b>Add new knowledge</b>: Tell us something entirely new! For example, you could fill in something in this frame:</p>
+	<p>[FIXME] we'll put this here soon!</p></li>
+  <li><p><b>Review existing concepts</b>: Click on any concept you see to get to its page. Once there, you can rate existing knowledge about it, or answer questions that OpenMind asks you. For example, here are some concepts that could use your review:</p>
+	<p>Again, [FIXME]... coming soon.</li>
+</ul>
+<p>If you have any trouble, please don't hesitate to contact us.</p>
+{% endblocktrans %}
+{% else %}
+{% blocktrans %}
+<p>Sorry, it didn't work. Either your activation link was incorrect, or
+the activation key for your account has expired; activation keys are
+only valid for {{ expiration_days }} days after
+registration.</p>
+{% endblocktrans %}
+{% endif %}
+{% endblock %}

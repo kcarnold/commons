@@ -1,0 +1,6 @@
+# Pootle preferences for project commons, language tr
+
+rights:
+  default = u'view, suggest, archive, pocompile'
+  nobody = u'view'
+  viktor = u'view, suggest, translate, archive, pocompile'

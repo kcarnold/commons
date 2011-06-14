@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load commons_tags %}
+<h3>{% trans "Places to start" %}</h3>
+<h4>{% trans "Concepts" %}</h4>
+{% top_concepts LANGUAGE_CODE %}
+<h4>{% trans "Vote on these statements..." %}</h4>
+<ul class="ratings">
+  {% top_torate LANGUAGE_CODE 10 %}
+</ul>
+<h4>{% trans "Feedback" %}</h4>
+{% if user.is_authenticated %}
+<form action="/feedback/" method="POST">
+<textarea name="feedback" id="feedback" rows="5" cols="30"></textarea>
+<input type="hidden" name="page" value="{{request.get_full_path}}" />
+<input type="submit" value="{% trans "Send it in!" %}" />
+</form>
+{% else %}
+You could post feedback if you were logged in.
+{% endif %}
+{% comment %}
+<h3>{% trans "Recently learned" %}</h3>
+{% recently_learned LANGUAGE_CODE user.is_authenticated %}
+{% endcomment %}

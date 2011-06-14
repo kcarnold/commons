@@ -1,0 +1,8 @@
+{% load commons_tags %}
+{% load i18n %}
+<td class="assertion_text">
+  {% predlink assertion %}
+  {% linked_assertion assertion %}</td>
+<td class="creator">{% trans "by" %} {% userlink assertion.creator %}</td>
+<td class="score">{% trans "Score:"%} {{assertion.score}}</td>
+<td>{% rating_commands assertion %}</td>

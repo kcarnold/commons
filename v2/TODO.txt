@@ -1,0 +1,15 @@
+To do:
+* Render similarity as HTML
+* Ad-hoc categories
+* Redo tabs
+* REST API
+* Frame pages
+* Make other languages work
+* Free text
+
+Later:
+* Flags
+* Comments
+
+Bugs:
+

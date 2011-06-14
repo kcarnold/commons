@@ -1,0 +1,38 @@
+{% extends "usertest/base.html" %}
+{% block body %}
+<h1>Please evaluate the following statements.</h1>
+
+<p>The 40 statements below come from a variety of sources, and may or may not
+be statements of common sense knowledge. Please evaluate the truth of each
+statement.</p>
+
+<p>Focus on the meaning, not the grammar. You should disregard minor
+grammatical errors if you still understand what the statement is saying.
+However, if the statement simply makes no sense, you should mark it as
+such.</p>
+
+<form action="/usertest/answers/" method="POST">
+<p>
+<input type="checkbox" name="done_before" id="done_before"/>
+<label for="done_before">Please check this box if you have <b>done this
+evaluation before.</b></label>
+</p>
+{% for question in questions %}
+  <div style="padding: 0.5ex; background-color: {% cycle "#eee" "#fff" %};">
+  <p>
+  {{ question.statement_highlight|safe }}
+  <br/>
+  {% for value, label in choices %}
+    <input type="radio" name="q_{{ question.id }}" value="{{ value }}"
+     id="{{question.id}}_{{value}}">
+    </input>
+    <label for="{{question.id}}_{{value}}">{{ label }}</label>
+    <br/>
+  {% endfor %}
+  </p>
+  </div>
+{% endfor %}
+<input type="submit" value="Submit"/>
+</form>
+{% endblock %}
+

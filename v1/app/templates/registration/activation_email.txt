@@ -1,0 +1,7 @@
+{% load humanize %}{% load i18n %}{% blocktrans with expiration_days|apnumber as expiration_days %}
+Someone, hopefully you, signed up for a new account at Open Mind Commons (http://commons.media.mit.edu/) using this email address. If it was you, and you'd like to activate and use your account, click the link below or copy and paste it into your web browser's address bar:
+
+http://commons.media.mit.edu/accounts/activate/{{ activation_key }}/
+
+If you didn't request this, you don't need to do anything; you won't receive any more email from us, and the account will expire automatically in {{ expiration_days }} days.
+{% endblocktrans %}

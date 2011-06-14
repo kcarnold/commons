@@ -1,0 +1,6 @@
+local_settings.py
+db_config.py
+tensors
+tensors/en_svd
+tensors/en_tensor.gz
+site_media

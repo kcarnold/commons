@@ -1,0 +1,5 @@
+# Pootle preferences for project commons, language nl
+
+rights:
+  default = u'view, suggest, translate, archive, pocompile'
+  nobody = u'view'

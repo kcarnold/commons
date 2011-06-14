@@ -1,0 +1,7 @@
+{% load commons_tags %}
+<li class='small_assertion'>
+  {% predlink assertion %}
+  {% linked_assertion assertion %}
+{%comment%}  (by&nbsp;{% userlink assertion.creator %}){%endcomment%}
+  {% rating_commands assertion %}
+</li>

@@ -1,0 +1,15 @@
+{% extends "commons/base.html" %}
+{% load commons_tags %}
+{% load i18n %}
+
+{% block title %}{% trans "Concept:" %} {{ concept_name }}{% endblock %}
+
+{% block content %}
+{# FIXME: needs data! #}
+<div>
+  <p>{% trans "Nothing is currently known about" %} '<strong>{{concept_name}}</strong>'.</p>
+
+  <p>{% trans "Why don't you add some knowledge?" %}</p>
+</div>
+{% endblock content %}
+

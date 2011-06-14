@@ -1,0 +1,49 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% load capture %}
+{% block title %}
+{% ifequal tgt_user user %}
+{% trans "My contributions" %}
+{% else %}
+{% trans "Contributions from user:" %} {{tgt_user.username}}
+{% endifequal %}
+{% endblock %}
+{% block content %}
+{% ifequal tgt_user user %}
+<h2>{% trans "New knowledge that you contributed" %}</h2>
+{% else %}
+<h2>{% trans "New knowledge contributed by this user" %}</h2>
+{% endifequal %}
+{% if contributions %}
+  {% with contributions.contributions_list as assertion_list %}
+  {% with contributions.paginator as paginator %}
+  {% with contributions.page_obj as page_obj %}
+  {% with "contributions_" as pageprefix %}
+  {% captureas otherpage %}&ratings_page={{ratings.page}}{% endcaptureas %}
+    {% include "commons/_assertionlist.html" %}
+  {% endwith %}
+  {% endwith %}
+  {% endwith %}
+  {% endwith %}
+{% else %}
+<p>No contributions yet.</p>
+{% endif %}
+
+
+{% ifequal tgt_user user %}
+<h2>{% trans "Existing knowledge that you rated" %}</h2>
+{% else %}
+<h2>{% trans "Existing knowledge rated by this user" %}</h2>
+{% endifequal %}
+{% with ratings.ratings_list as rating_list %}
+{% with ratings.paginator as paginator %}
+{% with ratings.page_obj as page_obj %}
+{% with "ratings_" as pageprefix %}
+{% captureas otherpage %}&contributions_page={{contributions.page}}{% endcaptureas %}
+  {% include "commons/_ratinglist.html" %}
+{% endwith %}
+{% endwith %}
+{% endwith %}
+{% endwith %}
+{% endblock %}

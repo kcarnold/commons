@@ -1,0 +1,69 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Sign Up" %}{% endblock %}
+{% block content %}
+{% blocktrans %}
+<p>Fill out the form (all fields are required) and your account will be created; you'll be sent an email with instructions on how to finish your registration.</p>
+
+<p>We'll only use your email to send you signup instructions. We hate spam
+as much as you do.</p>
+{% endblocktrans %}
+
+  {% if form.errors %}
+  <p class="error">{% trans "Please correct the errors below:" %} {{ form.non_field_errors }}</p>
+  {% endif %}
+
+  <h1>{% trans "Create an account" %}</h1>
+  
+  <form method="post" action="">
+    <dl>
+      <dt>
+        <label for="id_username">{% trans "Username:" %}</label>
+      </dt>
+      <dd>
+        {{ form.username }}
+        {% if form.username.errors %}
+          <span class="error">* {{ form.username.errors|join:", " }}</span>
+        {% endif %}
+      </dd>
+  
+      <dt>
+        <label for="id_email">{% trans "Email address:" %}</label>
+      </dd>
+      <dd>
+        {{ form.email }}
+        {% if form.email.errors %}
+          <span class="error">* {{ form.email.errors|join:", " }}</span>
+        {% endif %}
+      </dd>
+  
+      <dt>
+        <label for="id_password1">{% trans "Password:" %}</label>
+      </dt>
+      <dd>
+        {{ form.password1 }}
+        {% if form.password1.errors %}
+          <span class="error">* {{ form.password2.errors|join:", " }}</span>
+        {% endif %}
+      </dd>
+  
+      <dt>
+        <label for="id_password2">{% trans "Password (type again to catch typos):"%}</label>
+      </dt>
+      <dd>
+        {{ form.password2 }}
+        {% if form.password2.errors %}
+          <span class="error">* {{ form.password2.errors|join:", " }}</span>
+        {% endif %}
+      </dd>
+
+      <dt><input type="submit" value="{% trans "Register" %}" /></dt>
+    </dl>
+  </form>
+
+{% blocktrans %}
+<p>All content on this site may be redistributed under the terms of either the <a href="http://creativecommons.org/licenses/GPL/2.0/">GNU General Public License</a>, version 2 or later, or the <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 License</a>. By contributing to this site, you agree to license your contributions under these licenses.</p>
+{% endblocktrans %}
+
+{% endblock %}
+

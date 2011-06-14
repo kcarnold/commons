@@ -1,0 +1,23 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %}{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>{% trans "Your username and password didn't match. Please try again." %}</p>
+{% endif %}
+
+<p>{% blocktrans %}If you don't have an account, you can <a href="/accounts/register/">sign up</a> for one.{% endblocktrans %}</p>
+
+<form method="post" action="?next={{next|default:"/"}}">
+<table>
+<tr><td><label for="id_username">{% trans "Username:" %}</label></td><td>{{ form.username }}</td></tr>
+<tr><td><label for="id_password">{% trans "Password:" %}</label></td><td>{{ form.password }}</td></tr>
+</table>
+
+<input type="submit" value="{% trans "Log in" %}" />
+</form>
+
+{% endblock %}

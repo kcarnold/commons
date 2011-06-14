@@ -1,0 +1,46 @@
+NameVirtualHost *
+<VirtualHost *>
+	     # WSGIDaemonProcess site-1 user=jayant group=admin processes=1 threads=10
+	     # WSGIProcessGroup site-1
+		 
+
+	ServerAdmin kcarnold@media.mit.edu
+
+	Alias /media/ /csc/commons/media/
+	
+	<Directory /csc/commons/media>
+	Order deny,allow
+	Allow from all
+	</Directory>
+
+	WSGIScriptAlias / /csc/commons/django.wsgi
+
+	<Directory /csc/commons/media>
+	Order deny,allow
+	Allow from all
+	</Directory>
+
+	DocumentRoot /sw/var/www/
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /sw/var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+		# This directive allows us to have apache2's default start page
+                # in /apache2-default/, but still have / go to the right place
+                RedirectMatch ^/$ /apache2-default/
+	</Directory>
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /csc/commons/logs/access.log combined
+	ErrorLog /csc/commons/logs/error.log
+
+	ServerSignature On
+</VirtualHost>

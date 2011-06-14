@@ -1,0 +1,32 @@
+{% extends "usertest/base.html" %}
+{% block body %}
+<h1>Thank you!</h1>
+<p>
+Thank you for your time. Now we'll show you where each of the statements came
+from.
+</p>
+<p>
+Some of these statements were user-contributed knowledge that directly from our
+semantic network, ConceptNet. Others were inferred from other knowledge, and
+others were just random nonsense. We ran all the statements through the same
+sentence-generation process.
+</p>
+
+{% for source, answers in got_answers.items %}
+  <h2>{{ source }}</h2>
+  <table>
+  <tr><th>Statement</th><th>Your evaluation</th></tr>
+  {% for answer in answers %}
+  <tr>
+    <td>{{ answer.question.statement_highlight|safe }}</td>
+    <td>{{ answer.text_value }}</td>
+  </tr>
+  {% endfor %}
+  </table>
+{% endfor %}
+
+<hr/>
+<p>You're done now, but you can <a href="/usertest">take the evaluation
+again</a> if you want.</p>
+{% endblock %}
+

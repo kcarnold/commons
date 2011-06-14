@@ -1,0 +1,34 @@
+{% load i18n %}
+{% if user.is_authenticated %}
+<p>
+{% blocktrans with user.username as username %}Logged in as {{ username }}.{% endblocktrans %}
+<a href="{% url auth_logout %}">{% trans "Sign out" %}</a>
+</p>
+{% else %}
+{% comment %}
+{% trans "You are not logged in." %}
+{% endcomment %}
+<a href="{% url auth_login %}" onclick="loginClicked(); return false;">Login</a>
+ |
+<a href="{% url registration_register %}">{% trans "Sign up" %}</a>
+<div id="login" class="hidden">
+<form action="{% url auth_login %}" method="post">
+<input type="hidden" name="next" value="{{request.get_full_path}}" />
+{% trans "Username:" %} <input type="text" name="username" size="10" /><br />
+{% trans "Password:" %} <input type="password" name="password" size="10" /><br />
+<input type="submit" value="{% trans "Log in" %}" />
+</form>
+</div>
+{% endif %}
+
+<form action="{% url setlang %}" method="get">
+{% spaceless %}
+<select name="lang">
+{% for lang in langs %}
+<option value="{{lang.id}}" {% if lang.is_cur %}selected="selected"{% endif %}>{{ lang.name }} ({{lang.id}})</option>
+{% endfor %}
+</select>
+{% endspaceless %}
+<input type="hidden" name="next" value="{{request.get_full_path}}" />
+<input type="submit" value="Set" />
+</form>

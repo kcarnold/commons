@@ -1,0 +1,34 @@
+/* SITE-SPECIFIC TAB STYLING */
+
+
+/* selected tabs */
+#home_tab .rtab_home,
+#concepts_tab .rtab_concepts,
+#statements_tab .rtab_statements,
+#add_tab .rtab_add,
+#notices_tab .rtab_notices
+{
+    bottom: -1px !important;
+    padding-bottom: 0 !important;
+}
+#home_tab .rtab_home a,
+#concepts_tab .rtab_concepts a,
+#statements_tab .rtab_statements a,
+#add_tab .rtab_add a,
+#notices_tab .rtab_notices a
+{
+    color: #000 !important; /* selected tab text colour */
+}
+#home_tab .rtab_home div,
+#concepts_tab .rtab_concepts div,
+#statements_tab .rtab_statements div,
+#add_tab .rtab_add div,
+#notices_tab .rtab_notices div
+{
+    margin: 0;
+    background-color: #DEF !important; /* selected tab colour */
+    border-left: 1px solid #000 !important; /* tab border */
+    border-top: 1px solid #000 !important; /* tab border */
+    border-right: 1px solid #000 !important; /* tab border */
+    padding-bottom: 5px; /* 1px more than unselected padding-bottom */
+}

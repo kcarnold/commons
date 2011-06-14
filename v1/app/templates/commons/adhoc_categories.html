@@ -1,0 +1,159 @@
+{% extends "commons/base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+{% block title %}
+{% trans "Ad-hoc categories" %}
+{% endblock %}
+
+{% block extra_header %}
+<script>
+function $_(x){return document.getElementById(x);}
+function go_json( url, form, handler, error_handler ) {
+        YUC = YAHOO.util.Connect;
+        JSON = YAHOO.lang.JSON;
+
+        var callbacks = {
+                success: function(o) {
+                        $_('ft').innerHTML = '';
+                        // Attempt to parse JSON
+                        try {
+                                response = JSON.parse(o.responseText);
+                        } catch (x) {
+                               $_('ft').innerHTML = 'JSON parse error!';
+                               return;
+                        }
+
+                        // Render response
+                        if (response['text'])
+                            $_('ft').innerHTML = response['text'];
+
+                        // Handle it
+                        if( response['result'] == 'ok' ) handler(response);
+                        else if( typeof(error_handler) != 'undefined' ) error_handler(response);
+                }
+        };
+
+        // Submit request
+        var post = $_(form);
+        YUC.setForm(post);
+        YUC.asyncRequest('POST', url, callbacks);
+}
+
+function fetch_adhoc() {
+        // Prepare request
+        var concepts = $_('concepts').value.split(/,\s*/);
+        for( var i = 0; i < concepts.length; i++ )
+                concepts[i] = encodeURIComponent(concepts[i]);
+
+        // Submit requests
+        _fetch_adhoc(concepts, 'adhoc_concepts', '../concepts/near');
+        _fetch_adhoc(concepts, 'adhoc_features', '../features/near');
+
+        // Operation Complete!
+}
+
+function _fetch_adhoc(concepts, trg, prefix) {
+		$_(trg).innerHTML = '<span class="fetching">Fetching...</span>';
+        var handler = function(response) {
+                var html = '<table>';
+                var sims = response['similar'];
+                for( var i = 0; i < sims.length; i++ ) {
+                        html += '<tr><td class="text">'+sims[i]['text'] + '</td>';
+						html += '<td class="score">'+parseFloat(sims[i]['score']).toFixed(2) + '</td></tr>';
+                }
+				html += '</table>';
+                $_(trg).innerHTML = html;
+        };
+
+		function err_handler(err_text) {
+            $_(trg).innerHTML = '<span style="color: red">'+err_text+'</span>';
+		}
+
+        // Submit requests
+        var url_parts = [prefix].concat(concepts);
+        get_json(url_parts.join('/') + '/', handler, err_handler);
+}
+</script>
+
+<style type="text/css">
+/*#adhoc_concepts {
+  width: 20em;
+}
+
+#adhoc_features {
+  width: 20em;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  float: left;
+  margin: .5em;
+}*/
+
+/* #adhoc_results {
+  width: 40em;
+}
+
+#adhoc_results td {
+  border: 2px solid #ccc;
+  background: white;
+  margin: 10em;
+  vertical-align: top;
+}*/
+
+.adhoc .column_title {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.adhoc {
+  background: white;
+  border: 1px solid #ccc;
+  margin: 0 1em;
+  float: left;
+}
+
+.fetching {
+  color: red;
+}
+
+.adhoc table {
+  width: 100%;
+}
+
+.adhoc table td {
+  border: none;
+}
+
+.adhoc table .score {
+  text-align: right;
+  color: #999;
+  padding-right: 0.5em;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<p>{% trans "Enter a few words in the box below, separated by commas." %}</p>
+
+<p>
+<form id='adhoc_form' action='javascript:fetch_adhoc();'>
+<input type="text" id='concepts' name="concepts" size="25" /> <input type="submit" value="Submit" />
+</form>
+</p>
+
+<p style="margin-top: 3em">{% trans "Here are concepts and features that are similar to this category:" %}</p>
+
+<div style="width: 15em;" class="adhoc">
+	  <div class="column_title">{% trans "Similar concepts" %}</div>
+	  <div id="adhoc_concepts"></div>
+</div>
+<div style="width: 25em;" class="adhoc">
+	  <div class="column_title">{% trans "Similar features" %}</div>
+	  <div id="adhoc_features"></div>
+</div>
+<div id="ft" style="clear: both;"></div>
+
+{% endblock %}
