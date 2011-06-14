@@ -14,7 +14,7 @@ the REST API documentation at
 http://csc.media.mit.edu/docs/conceptnet/webapi.html#rest-requests .
 """
 
-import urllib2
+import urllib, urllib2
 
 try:
     import json
@@ -141,12 +141,54 @@ def votes_for(obj):
     """
     return _refine_json(obj, 'votes')
 
+def add_statement(language, frame_id, text1, text2, username, password):
+    """
+    Add a statement to Open Mind, or vote for it if it is there.
+
+    Requires the following parameters:
+        
+        language
+            The language code, such as 'en'.
+        frame_id
+            The numeric ID of the sentence frame to use.
+        text1
+            The text filling the first blank of the frame.
+        text2
+            The text filling the second blank of the frame.
+        username
+            Your Open Mind username.
+        password
+            Your Open Mind password.
+    
+    Example: 
+    >>> frame = lookup('frame', 'en', 7)
+    >>> frame['text']
+    '{1} is for {2}'
+    
+    >>> add_statement('en', 7, 'election day', 'voting', 'rspeer', PASSWORD)
+    (Result: rspeer adds the statement "election day is for voting", which
+    is also returned as a raw_assertion.)
+    """
+    return _post_json([language, 'frame', frame_id, 'statements'], {
+        'username': username,
+        'password': password,
+        'text1': text1,
+        'text2': text2
+    })
+
 def _get_json(*url_parts):
-    url = API_URL + '/'.join(urllib2.quote(p) for p in url_parts) + '/query.json'
+    url = API_URL + '/'.join(urllib2.quote(str(p)) for p in url_parts) + '/query.json'
     return json.loads(_get_url(url))
 
+def _post_json(url_parts, post_parts):
+    url = API_URL + '/'.join(urllib2.quote(str(p)) for p in url_parts) + '/query.json'
+    postdata = urllib.urlencode(post_parts)
+    req = urllib2.Request(url, postdata)
+    response = urllib2.urlopen(req)
+    return json.loads(response.read())
+
 def _extend_url(old_url, *url_parts):
-    url = old_url + '/'.join(urllib2.quote(p) for p in url_parts) + '/'
+    url = old_url + '/'.join(urllib2.quote(str(p)) for p in url_parts) + '/'
     return json.loads(_get_url(url))
 
 def _get_url(url):
